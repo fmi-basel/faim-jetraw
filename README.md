@@ -6,39 +6,51 @@ FAIM-Jetraw Workflows
 
 [comment]: <> ([![codecov]&#40;https://codecov.io/gh/fmi-basel/faim-jetraw/branch/main/graph/badge.svg&#41;]&#40;https://app.codecov.io/gh/fmi-basel/faim-jetraw&#41;)
 
-Jetraw compression workflows used in the facility for advanced mircoscopy
-and imaging (FAIM) at the Friedrich Miescher Institute for biomedial research.
+Jetraw compression workflows used in the facility for advanced mircoscopy and
+imaging (FAIM) at the Friedrich Miescher Institute for biomedial research.
 
 # Installation
+
 We recommend creating a new conda environment with
+
 ```shell
 conda create --name jrc python=3.8
 ```
 
-Then install [pyJetRaw](https://github.com/Jetraw/pyJetraw) into the
-freshly create conda env.
+Then install [pyJetRaw](https://github.com/Jetraw/pyJetraw)
+and [DpCore](https://github.com/Jetraw/pyDpcore)
+into the freshly create conda env.
+
+__Note:__ Linux users `export
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path_to_jetraw_folder/lib/`
 
 Finally install this package with
+
 ```shell
 pip install git+https://github.com/fmi-faim/faim-jetraw
 ```
 
 # Usage
+
 `TODO`
 
 # Development
+
 Install test requirements with
+
 ```shell
 pip install -r requirements.txt
 ```
 
 To run pre-commit hooks install
+
 ```shell
 pip install pre-commit
 pre-commit install
 ```
 
 # License
+
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this software except in compliance with the License. You may obtain a copy of
 the License at http://www.apache.org/licenses/LICENSE-2.0.
