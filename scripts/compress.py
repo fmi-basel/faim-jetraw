@@ -1,11 +1,10 @@
 import argparse
 import configparser
-from glob import glob
 
-from prefect import Flow, Parameter, task, unmapped
+from prefect import Flow, Parameter, unmapped
 from prefect.executors import LocalDaskExecutor
 
-from jetraw_workflows.tasks import prepare_and_compress
+from jetraw_workflows.tasks import list_files, prepare_and_compress
 
 
 def config2kwargs(config):
@@ -16,11 +15,6 @@ def config2kwargs(config):
         "cam_id": config["DEFAULT"]["cam_id"],
         "output_dir": config["DEFAULT"]["output_dir"],
     }
-
-
-@task
-def list_files(pattern):
-    return glob(pattern)
 
 
 with Flow("Compress") as flow:
