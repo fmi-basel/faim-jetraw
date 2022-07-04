@@ -153,3 +153,4 @@ venv/
 
 # written by setuptools_scm
 src/jetraw_workflows/_version.py
+scripts/_compress.cfg
