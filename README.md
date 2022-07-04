@@ -1,8 +1,10 @@
 FAIM-Jetraw Workflows
 ---
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![tests](https://github.com/fmi-basel/faim-jetraw/workflows/tests/badge.svg)](https://github.com/fmi-basel/faim-jetraw/actions)
-[![codecov](https://codecov.io/gh/fmi-basel/faim-jetraw/branch/main/graph/badge.svg)](https://app.codecov.io/gh/fmi-basel/faim-jetraw)
+
+[comment]: <> ([![tests]&#40;https://github.com/fmi-basel/faim-jetraw/workflows/tests/badge.svg&#41;]&#40;https://github.com/fmi-basel/faim-jetraw/actions&#41;)
+
+[comment]: <> ([![codecov]&#40;https://codecov.io/gh/fmi-basel/faim-jetraw/branch/main/graph/badge.svg&#41;]&#40;https://app.codecov.io/gh/fmi-basel/faim-jetraw&#41;)
 
 Jetraw compression workflows used in the facility for advanced mircoscopy
 and imaging (FAIM) at the Friedrich Miescher Institute for biomedial research.
