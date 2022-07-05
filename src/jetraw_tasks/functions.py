@@ -4,15 +4,12 @@ from glob import glob
 import dpcore
 import jetraw
 import tifffile
-from prefect import task
 
 
-@task()
 def list_files(pattern):
     return glob(pattern)
 
 
-@task()
 def prepare_and_compress(
     input_path: str, dat_path: str, cam_id: str, output_directory: str
 ):

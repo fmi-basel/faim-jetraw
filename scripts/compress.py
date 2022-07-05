@@ -1,10 +1,10 @@
 import argparse
 import configparser
 
-from prefect import Flow, Parameter, unmapped
+from prefect import Flow, Parameter, task, unmapped
 from prefect.executors import LocalDaskExecutor
 
-from jetraw_workflows.tasks import list_files, prepare_and_compress
+from jetraw_tasks.functions import list_files, prepare_and_compress
 
 
 def config2kwargs(config):
@@ -17,6 +17,23 @@ def config2kwargs(config):
     }
 
 
+@task()
+def list_files_task(pattern):
+    return list_files(pattern)
+
+
+@task()
+def prepare_and_compress_task(
+    input_path: str, dat_path: str, cam_id: str, output_directory: str
+):
+    prepare_and_compress(
+        input_path=input_path,
+        dat_path=dat_path,
+        cam_id=cam_id,
+        output_directory=output_directory,
+    )
+
+
 with Flow("Compress") as flow:
     num_workers = Parameter("num_workers", 1)
     input_pattern = Parameter("input_pattern", "./*.tif")
@@ -24,9 +41,9 @@ with Flow("Compress") as flow:
     cam_id = Parameter("cam_id", "Camera1 2x2binning")
     output_dir = Parameter("output_dir", "./output")
 
-    files = list_files(input_pattern)
+    files = list_files_task(input_pattern)
 
-    prepare_and_compress.map(
+    prepare_and_compress_task.map(
         files, unmapped(dat_file), unmapped(cam_id), unmapped(output_dir)
     )
 

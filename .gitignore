@@ -152,5 +152,5 @@ venv/
 .DS_Store
 
 # written by setuptools_scm
-src/jetraw_workflows/_version.py
+src/jetraw_tasks/_version.py
 scripts/_compress.cfg
